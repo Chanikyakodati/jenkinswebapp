@@ -5,19 +5,19 @@ pipeline {
             steps {
                 echo 'clone the repo'
                 sh 'rm -fr html'
-                sh 'git clone https://github.com/Chanikyakodati/jenkinswebapp.git'
+                //sh 'git clone https://github.com/Chanikyakodati/jenkinswebapp.git'
             }
         }
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -i chanikyausa.pem ubuntu@ec2-44-212-39-110.compute-1.amazonaws.com sudo git -C /var/www/html pull'
+                //sh 'ssh -i chanikyausa.pem ubuntu@ec2-44-212-39-110.compute-1.amazonaws.com sudo git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 44.212.39.110 | head -n 1'
+                //sh 'curl -Is 44.212.39.110 | head -n 1'
             }
         }
     }
