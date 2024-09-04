@@ -11,12 +11,7 @@ pipeline {
         stage('push repo to remote host ') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                stage('File check stage!') {
-                    when { expression { return fileExists ('/home/ubuntu/chanikyausa.pem') } }
-                steps {
-                       echo "file exists"
-                      }
-                }
+                
                 sh 'ssh -i /home/ubuntu/chanikyausa.pem ubuntu@ec2-44-212-39-110.compute-1.amazonaws.com sudo git -C /var/www/html pull'
             } 
         }  
