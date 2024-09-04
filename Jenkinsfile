@@ -11,6 +11,11 @@ pipeline {
         stage('push repo to remote host ') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
+                if (fileExists('/home/ubuntu/chanikyausa.pem')) {
+                    echo 'Yes'
+                } else {
+                    echo 'No'
+                }
                 sh 'ssh -i /home/ubuntu/chanikyausa.pem ubuntu@ec2-44-212-39-110.compute-1.amazonaws.com sudo git -C /var/www/html pull'
             } 
         }  
