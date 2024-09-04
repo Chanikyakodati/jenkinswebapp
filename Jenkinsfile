@@ -7,7 +7,7 @@ pipeline {
                 sh 'rm -fr html'
                 sh 'git clone https://github.com/Chanikyakodati/jenkinswebapp.git'
             } 
-        } 
+        }  
         stage('push repo to remote host ') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
