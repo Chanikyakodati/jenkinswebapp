@@ -6,7 +6,7 @@ pipeline {
                 echo 'clone the repo'
                 sh 'rm -fr html'
                 sh 'git clone https://github.com/Chanikyakodati/jenkinswebapp.git'
-            } 
+            }  
         } 
         stage('push repo to remote host ') {
             steps {
