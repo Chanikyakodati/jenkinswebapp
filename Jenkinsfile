@@ -13,7 +13,7 @@ pipeline {
                 echo 'connect to remote host and pull down the latest version'
                 sh 'ssh -i ~/chanikyausa.pem ubuntu@44.212.39.110 sudo git -C /var/www/html pull'
             }
-        }
+        } 
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
